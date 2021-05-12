@@ -1,6 +1,6 @@
 ## React Movie App
 
-Simple non-responsive movie website made with react.
+Simple non-responsive movie app made with react.
 
 ## Available Scripts
 
