@@ -1,11 +1,13 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Switch, Route } from "react-router";
+import { Switch, Route, Redirect } from "react-router";
 import { Link, useParams } from "react-router-dom";
 
-import { HomePage } from "./pages/HomePage.js";
+import { MoviesPage } from "./pages/MoviesPage.js";
 import { Header } from "./components/Header.js";
 import { MovieDetailsPage } from "./pages/MovieDetailsPage.js";
+import { SignUp, LogIn } from "./pages/Authentication.js";
+import { PrivateRoute } from "./components/PrivateRoute.js";
 import { API_KEY } from "./config.js";
 
 function App() {
@@ -25,11 +27,24 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-        <Route exact path="/" render={() => <HomePage BASE_URL={BASE_URL} />} />
+        <Route exact path="/" render={() => <LogIn />} />
+        <Route exact path="/signup" render={() => <SignUp />} />
+
+        <PrivateRoute exact path="/movies">
+          <MoviesPage BASE_URL={BASE_URL} />
+        </PrivateRoute>
+        <PrivateRoute exact path="/movie/:id">
+          <MovieDetailsPage BASE_URL={BASE_URL} />
+        </PrivateRoute>
+
         <Route
           exact
-          path="/movie/:id"
-          render={() => <MovieDetailsPage BASE_URL={BASE_URL} />}
+          path="*"
+          render={() => (
+            <div style={{ textAlign: "center", fontSize: "2.7rem" }}>
+              404 Page Not Found
+            </div>
+          )}
         />
       </Switch>
     </div>

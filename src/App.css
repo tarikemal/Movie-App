@@ -86,7 +86,7 @@ body {
   text-align: center;
 }
 
-input[type="text"] {
+.search-bar input[type="text"] {
   padding: 10px 20px;
   margin-top: 2rem;
   border-radius: 2rem;
@@ -118,4 +118,20 @@ input[type="text"] {
   text-decoration: none;
   outline: none;
   border: none;
+}
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  margin: auto;
+}
+
+.login-part,
+.signup-part {
+  margin: 1rem;
+}
+
+.login-btn,
+.signup-btn {
+  padding: 0.3rem 1rem;
 }

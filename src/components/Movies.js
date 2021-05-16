@@ -9,7 +9,7 @@ export function Movies({ BASE_URL }) {
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${
-        query === "" ? "k" : query
+        query === "" ? "a" : query
       }`
     )
       .then((res) => res.json())

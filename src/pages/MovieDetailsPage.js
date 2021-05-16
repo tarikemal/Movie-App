@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { API_KEY } from "./../config.js";
 
-export function MovieDetailsPage({ BASE_URL }) {
+export function MovieDetailsPage() {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
 
