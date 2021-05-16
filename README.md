@@ -1,3 +1,7 @@
+## React Movie App
+
+Simple non-responsive movie app made with react.
+
 ## Available Scripts
 
 In the project directory, you can run:
